@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('img');
             $table->string('description');
             $table->float('price');
-            $table->float('discount');
+          //  $table->float('discount');
             $table->dateTime('exp_date');
             
         });

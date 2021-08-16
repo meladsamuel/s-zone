@@ -11,4 +11,14 @@ class Product extends Model
   public function machines(){
         return $this->belongsToMany(Product::class);
     }
+
+    protected $fillable = [
+        'id',
+        'name',
+        'img',
+        'description',
+        'price',
+       // 'discount',
+        'exp_date',
+    ];
 }
