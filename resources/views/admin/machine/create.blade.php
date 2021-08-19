@@ -27,7 +27,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> add product </h4>
+                                    <h4 class="card-title" id="basic-layout-form">  </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -50,20 +50,19 @@
         </div>
    @endforeach
 @endif
-                                        <form class="form" action="{{route('admin.products.store')}}" method="POST"
-                                              enctype="multipart/form-data">
+                                        <form class="form" action="{{route('admin.machine.store')}}" method="POST">
                                             @csrf
 
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> products data </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> machine data </h4>
 
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> products name </label>
+                                                            <label for="projectinput1"> machine name </label>
                                                             <input type="text" value="" id="name"
                                                                    class="form-control"
-                                                                   placeholder="ادخل اسم اللغة  "
+                                                                   placeholder="machine name "
                                                                    name="name">
                                                             @error('name')
                                                             <span class="text-danger">{{$message}}</span>
@@ -71,58 +70,26 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="mb-3">
-    <label for="exampleInput title" class="form-label">ADD your image</label>
-    <input type="file" class="form-control" id="img" placeholder="ADD image" name="img">
-                                                     </div>
 
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1"> description </label>
-                                                            <input type="text" value="" id="name"
-                                                                   class="form-control"
-                                                                   placeholder=" description  "
-                                                                   name="description">
-                                                            @error('description')
-                                                            <span class="text-danger">{{$message}} </span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
+                                                    <div class="mb-3">
+    <label for="ip_address" class="form-label">ip_address	</label>
+    <input type="text" class="form-control" id="ip_address" aria-describedby="longitude" placeholder="ip_address" name="ip_address" style="width:240px;">
                                                 </div>
+                                            </div>
 
                                                 <div class="row">
 
                                                 <div class="mb-3">
-    <label for="product price" class="form-label">ADD price</label>
-    <input type="number" class="form-control" id="price" aria-describedby="price" placeholder="ADD price" name="price">
+    <label for="longitude	" class="form-label">longitude	</label>
+    <input type="text" class="form-control" id="longitude" aria-describedby="longitude" placeholder="longitude" name="longitude">
                                                 </div>
                                             </div>
 
-                                            <div class="row">
-
-<div class="col-md-6">
-    <div class="form-group">
-        <label for="projectinput2"> categories </label>
-        <select name="cat_id" class="select2 form-control">
-        @isset($categories)
-              @foreach($categories as $category)        
-              
-               <option  value="{{$category->id}}">{{$category->name}}</option>        
-              
-            @endforeach
-                  @endisset    
-        </select>
-       
-        <span class="text-danger"></span>
-       
-    </div>
-</div>
-</div>
-
-                                            <div class="form-group" style="width: 200px">
-                                    <label for="exp_date" class="form-label">ADD product date</label>
-    <input class="form-control" type="date" name="exp_date" ><br><br>
+                                            <div class="mb-3">
+    <label for="latitude" class="form-label">	latitude	</label>
+    <input type="text" class="form-control" id="latitude" aria-describedby="latitude" placeholder="	latitude" name="latitude" style="width:220px;">
                                                 </div>
+                                            </div> 
 
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"

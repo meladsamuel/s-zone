@@ -43,7 +43,7 @@
                                 @include('admin.includes.alerts.errors')
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-                                        <form class="form" action="{{route('admin.products.update',$products ->id)}}" method="POST"
+                                        <form class="form" action="{{route('admin.products.update',$product ->id)}}" method="POST"
                                               enctype="multipart/form-data">
                                             @csrf
 
@@ -54,7 +54,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> products name </label>
-                                                            <input type="text" value="{{$products -> name}}" id="name"
+                                                            <input type="text" value="{{$product -> name}}" id="name"
                                                                    class="form-control"
                                                                    placeholder="product name  "
                                                                    name="name">
@@ -72,7 +72,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> description </label>
-                                                            <input type="text" value="{{$products -> description}}" id="name"
+                                                            <input type="text" value="{{$product -> description}}" id="name"
                                                                    class="form-control"
                                                                    placeholder=" description  "
                                                                    name="description">
@@ -87,9 +87,24 @@
 
                                                 <div class="mb-3">
     <label for="product price" class="form-label">ADD price</label>
-    <input type="number" class="form-control" id="price" aria-describedby="price" placeholder="ADD price" name="price" value="{{$products -> price}}">
+    <input type="number" class="form-control" id="price" aria-describedby="price" placeholder="ADD price" name="price" value="{{$product -> price}}">
                                                 </div>
                                             </div>
+
+                                            <div class="col-md-6">
+    <div class="form-group">
+        <label for="projectinput2"> categories </label>
+        <select name="cat_id" class="select2 form-control">
+        @isset($categories)
+              @foreach($categories as $category)
+               @if($category->id == $product->category->id)
+                <option selected value="{{$category->id}}">{{$category->name}}</option>
+                @else
+              <option value="{{$category->id}}">{{$category->name}}</option>
+                @endif
+            @endforeach
+                  @endisset
+        </select>
 
                                             <div class="form-group" style="width: 200px">
                                     <label for="exp_date" class="form-label">ADD product date</label>

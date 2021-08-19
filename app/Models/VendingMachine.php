@@ -8,7 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class VendingMachine extends Model
 {
     use HasFactory;
-  public function products(){
-       return $this->belongsToMany(VendingMachine::class);
-   }
+
+   protected $fillable = [
+    'id',
+    'name',
+    'ip_address',
+    'longitude',
+    'latitude',
+];
+    public function products(){
+        return $this->belongsToMany(VendingMachine::class);
+    }
 }

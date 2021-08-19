@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductsController extends Controller
 {
@@ -16,7 +17,8 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('admin.products.index', compact('products'));
+        $categories = Category::all();
+       return view('admin.products.index')->with('products', $products)->with('categories',$categories );
     }
 
     /**
@@ -26,7 +28,9 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('admin.products.create');
+        $categories = Category::all();
+
+        return view('admin.products.create')->with('categories',$categories );
     }
 
     /**
@@ -37,13 +41,13 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-       
-        try{ 
+
+        try{
         //dd($request->all());
         if($request->hasFile('img')){
             $file = $request->img;
             $new_file = time().$file->getClientOriginalName();
-            $file->move('storage/products', $new_file);   
+            $file->move('storage/products', $new_file);
         }
         Product::create([
             "name"=>$request->name,
@@ -51,10 +55,11 @@ class ProductsController extends Controller
             "description"=>$request->description,
             "price"=>$request->price,
             "exp_date"=>$request->exp_date,
+            "cat_id"=>$request->cat_id,
         ]);
         return redirect()->route('admin.products.index')->with(['success' => 'تم الحفظ بنجاح']);
        }catch (\Exception $ex) {
-        return redirect()->route('admin.products.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);    
+        return redirect()->route('admin.products.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);
        }
     }
 
@@ -77,8 +82,10 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $products = Product::find($id);
-         return view('admin.products.edit',compact('products'));
+        $product= Product::find($id);
+         $categories = Category::all();
+
+        return view('admin.products.edit')->with('product', $product)->with('categories',$categories );
     }
 
     /**
@@ -96,17 +103,18 @@ class ProductsController extends Controller
         if($request->hasFile('img')){
             $file = $request->img;
             $new_file = time().$file->getClientOriginalName();
-            $file->move('storage/products', $new_file);   
+            $file->move('storage/products', $new_file);
         }
         $products->name = $request->name;
         $products->price = $request->price;
         $products->description = $request->description;
         $products->description = $request->description;
         $products->exp_date = $request->exp_date;
+        $products->cat_id = $request->cat_id;
         $products->update();
         return redirect()->route('admin.products.index')->with(['success' => 'تم تحديث  بنجاح']);
          }catch (\Exception $ex) {
-            return redirect()->route('admin.products.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);    
+            return redirect()->route('admin.products.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);
            }
     }
 
@@ -123,7 +131,7 @@ class ProductsController extends Controller
         $products->destroy($id);
         return redirect()->route('admin.products.index')->with(['success' => 'تم الحذف  بنجاح']);
     }catch (\Exception $ex) {
-        return redirect()->route('admin.products.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);    
+        return redirect()->route('admin.products.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);
        }
     }
 }
