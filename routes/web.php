@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FrontController;
+use App\Http\Controllers\ShoppingCartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front.home');
-});
-/*Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
+Route::get('/', [FrontController::class, 'index'])->name("main.page");
+Route::post('/add-to-cart', [ShoppingCartController::class, 'addToCart'])->name('shopping.cart');
+Route::delete('/shopping-cart/products/{id}', [ShoppingCartController::class, 'removeProduct']);
+Route::post('/checkout', [ShoppingCartController::class, 'checkout'])->name('checkout');
 
 Auth::routes();
 

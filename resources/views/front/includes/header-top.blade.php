@@ -18,11 +18,11 @@
                 <div class="col-lg-6 col-md-6 d-flex justify-content-end align-items-center header-top-right">
                     <div class="register-out">
                         <i class="zmdi zmdi-account"></i>
-                        <a class="register" href="http://demo.bestprestashoptheme.com/savemart/ar/تسجيل الدخول?create_account=1" data-link-action="display-register-form">
+                        <a class="register" href="/register" data-link-action="display-register-form">
                             Register
                         </a>
                         <span class="or-text">or</span>
-                        <a class="login" href="http://demo.bestprestashoptheme.com/savemart/ar/الحساب الشخصي" rel="nofollow" title="تسجيل الدخول إلى حسابك">Sign in</a>
+                        <a class="login" href="/login" rel="nofollow" title="تسجيل الدخول إلى حسابك">Sign in</a>
                     </div>
 
                     <!-- begin module:ps_currencyselector/ps_currencyselector.tpl -->
