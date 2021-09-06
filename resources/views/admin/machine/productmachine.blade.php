@@ -25,7 +25,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">all machine </h4>
+                                    <h3 class="card-title">all product in this  machine </h3>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -55,30 +55,26 @@
                                             </thead>
                                             <tbody>
 
-                                            @isset($machines)
-                                                @foreach($machines as $machine)
+                                            @isset($vendingMachines->products)
+                                                @foreach($vendingMachines->products as $product)
                                                     <tr>
-                                                        <td>{{$machine -> id}}</td>
-                                                        <td>{{$machine -> name}}</td>
+                                                        <td>{{$product -> id}}</td>
+                                                        <td>{{$product -> name}}</td>
+
 
                                                         <td><div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('admin.machine.productmachine', $machine -> id)}}"
+                                                                <a href=""
                                                                    class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">view</a>
                                                             </div></td>
 
                                                         <td><div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('admin.machine.productmachinecreate',$machine -> id)}}"
+                                                                <a href=""
                                                                    class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">assign products </a>
                                                             </div></td>
-
                                                         <td>
-                                                            <div class="btn-group" role="group"
-                                                                 aria-label="Basic example">
-                                                                <a href="{{route('admin.machine.qrcode',$machine -> id)}}"
-                                                                   class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">generate qr code</a>
-                                                            </div>
+
                                                         </td>
                                                     </tr>
                                                 @endforeach

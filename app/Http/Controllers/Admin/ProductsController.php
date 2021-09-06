@@ -85,7 +85,7 @@ class ProductsController extends Controller
         $product= Product::find($id);
          $categories = Category::all();
 
-        return view('admin.products.edit')->with('product', $product)->with('categories',$categories );
+    return view('admin.products.edit')->with('product', $product)->with('categories',$categories );
     }
 
     /**

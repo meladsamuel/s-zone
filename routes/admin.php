@@ -6,8 +6,9 @@ use App\Http\Middleware\Requests\LoginRequest;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\MachineController;
-use App\Http\Controllers\Admin\OrderController;
-use App\Http\Controller\Admin\CategoryController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductmachineController;
+use App\Http\Controllers\Admin\QrcodeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,7 @@ use App\Http\Controller\Admin\CategoryController;
 */
 Route::group(['namespace'=>'Admin','middleware' => 'auth:admin'], function() {
         Route::get('/', [DashboardController::class, 'index']) -> name('admin.dashboard');
-      
+
 });
 
 
@@ -28,7 +29,7 @@ Route::group(['namespace'=> 'Admin', 'middleware' => 'guest:admin'], function(){
     Route::get('/login' ,[LoginController::class ,'getLogin'])->name('get.admin.login');
     Route::post('/login' ,[LoginController::class ,'login'])->name('admin.login');
 
-    
+
  });
               ############################  routes products  ###########################
       Route::namespace('admin')->group(function(){
@@ -51,7 +52,18 @@ Route::group(['namespace'=> 'Admin', 'middleware' => 'guest:admin'], function(){
          ############################ end routes machine  ###########################
 
            ############################  routes orders ###########################
-           Route::get('/order' ,[OrderController::class ,'index'])->name('admin.order.index');
+        //    Route::get('/order' ,[OrderController::class ,'index'])->name('admin.order.index');
             ############################ end routes orders  ###########################
 
+            ############################ product in vending machine ###########################
+
+             ############################  product in vending machine ###########################
+        Route::get('/machine/productmachine/{id}' ,[ProductmachineController::class ,'index'])->name('admin.machine.productmachine');
+        Route::get('/machine/productmachinecreate/{id}' ,[ProductmachineController::class ,'create'])->name('admin.machine.productmachinecreate');
+        Route::post('/machine/productmachine/store' ,[ProductmachineController::class ,'store'])->name('admin.machine.productmachine.store');
+
+Route::get('/machine/qrcode/{id}' ,[QrcodeController::class ,'index'])->name('admin.machine.qrcode');
+
 });
+
+

@@ -13,9 +13,9 @@ class AddColoumToTableProducts extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->string('cat_id');
-        });
+        // Schema::table('products', function (Blueprint $table) {
+        //     $table->string('cat_id');
+        // });
     }
 
     /**

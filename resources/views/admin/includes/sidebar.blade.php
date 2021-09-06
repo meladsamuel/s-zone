@@ -42,10 +42,10 @@
                         class="badge badge badge-danger badge-pill float-right mr-2">400</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{route('admin.order.index')}}"
+                    <li class="active"><a class="menu-item" href=""
                                           data-i18n="nav.dash.ecommerce"> show all </a>
                     </li>
-              
+
                 </ul>
             </li>
 

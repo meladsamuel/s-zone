@@ -92,7 +92,7 @@
                                             </div>
 
                                             <div class="col-md-6">
-    <div class="form-group">
+           <div class="form-group">
         <label for="projectinput2"> categories </label>
         <select name="cat_id" class="select2 form-control">
         @isset($categories)

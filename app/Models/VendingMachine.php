@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Product;
 class VendingMachine extends Model
 {
     use HasFactory;
@@ -17,6 +17,6 @@ class VendingMachine extends Model
     'latitude',
 ];
     public function products(){
-        return $this->belongsToMany(VendingMachine::class);
+        return $this->belongsToMany(Product::class);
     }
 }

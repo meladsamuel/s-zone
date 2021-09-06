@@ -37,7 +37,7 @@ class MachineController extends Controller
      */
     public function store(Request $request)
     {
-        try{ 
+        try{
             //dd($request->all());
             VendingMachine::create([
                 "name"=>$request->name,
@@ -47,7 +47,7 @@ class MachineController extends Controller
             ]);
             return redirect()->route('admin.machine.index')->with(['success' => 'تم الحفظ بنجاح']);
         }catch (\Exception $ex) {
-         return redirect()->route('admin.machine.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);    
+         return redirect()->route('admin.machine.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);
         }
     }
 
@@ -59,7 +59,7 @@ class MachineController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -92,7 +92,7 @@ class MachineController extends Controller
         $machines->update();
         return redirect()->route('admin.machine.index')->with(['success' => 'تم تحديث  بنجاح']);
          }catch (\Exception $ex) {
-            return redirect()->route('admin.machine.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);    
+            return redirect()->route('admin.machine.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);
            }
     }
 

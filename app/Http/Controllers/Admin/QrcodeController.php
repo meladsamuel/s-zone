@@ -4,20 +4,23 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Order;
-use App\Models\Category;
+use App\Models\Product;
+use App\Models\VendingMachine;
 
-class OrderController extends Controller
+class QrcodeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $orders = Order::all();
-        return view('admin.order.index',compact('orders'));
+        $machines = VendingMachine::find($id);
+
+        //dd($VendingMachines);
+        return view('admin.machine.qrcode')->with('machines',$machines );
+
     }
 
     /**
