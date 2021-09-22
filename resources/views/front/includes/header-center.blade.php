@@ -25,17 +25,11 @@
                            rel="nofollow" title="تسجيل الدخول إلى حسابك"><i class="header-icon-account"></i></a>
                     </div>
                     <div class="header_link_wishlist">
-                        <a href="http://demo.bestprestashoptheme.com/savemart/ar/module/novblockwishlist/mywishlist"
-                           title="My Wishlists">
-                            <i class="header-icon-wishlist"></i>
-                        </a>
+
                     </div>
 
-                    <!-- begin module:ps_shoppingcart/ps_shoppingcart.tpl -->
-                    <!-- begin /var/www/demo.bestprestashoptheme.com/public_html/savemart/themes/vinova_savemart/modules/ps_shoppingcart/ps_shoppingcart.tpl -->
                     <div id="_desktop_cart">
-                        <div class="blockcart cart-preview active"
-                             data-refresh-url="//demo.bestprestashoptheme.com/savemart/ar/module/ps_shoppingcart/ajax">
+                        <div class="blockcart cart-preview active">
                             <div class="header-cart">
                                 <div class="cart-left">
                                     <div class="shopping-cart"><i
@@ -74,7 +68,7 @@
                                                                aria-hidden="true"></i>
                                                         </a>
                                                     </div>
-                                                    <div>
+                                                </div>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -96,18 +90,13 @@
                                               class="label"> ( {{ App\Models\Cart::total() }}EGP ) </span>
                                     </div>
                                     <div class="cart-buttons d-flex">
-                                        <a href=""
-                                           class="btn btn-primary">View cart</a>
-                                        <a id="checkout-btn" href="#"
+                                        <a id="checkout-btn"
                                            class="btn btn-primary">Checkout</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- end /var/www/demo.bestprestashoptheme.com/public_html/savemart/themes/vinova_savemart/modules/ps_shoppingcart/ps_shoppingcart.tpl -->
-                    <!-- end module:ps_shoppingcart/ps_shoppingcart.tpl -->
-
                 </div>
             </div>
         </div>

@@ -40,6 +40,10 @@ Route::get('/map', function () {
          return view('front');
 });
 
+Route::post('/pickup', [ShoppingCartController::class, 'pickUp'])->name('checkout');
+Route::post('/orders', [ShoppingCartController::class, 'makeOrder'])->name('create.order');
+Route::get('/scan', [ShoppingCartController::class, 'scanQrCode'])->name('scan.qr');
+
 
 // Route::get('qr-code-g', function () {
 //     \QrCode::size(500)

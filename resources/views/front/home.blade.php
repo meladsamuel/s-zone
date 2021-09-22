@@ -44,11 +44,6 @@
                                     </div>
                                 </div>
                                 <div class="nivoSlider">
-                                   <!--  <a href="#">
-                                        <img
-                                            src="http://demo.bestprestashoptheme.com/savemart/modules/novnivoslider/images/266cf50ba4d1d91fa5f5ded20bb66ea38de3b350_1.jpg"
-                                            alt="" title="#htmlcaption_42"/>
-                                    </a> -->
                                     <a href="#">
                                         <img
                                             src="{{ asset('/9000.jpg') }}"
@@ -120,23 +115,20 @@
         </div>
         <section id="content" class="page-home pagehome-three">
             <div class="nov-row  col-lg-12 col-xs-12">
-                <div class="nov-row-wrap row">
+                <div class="row">
                     <div
-                        class="nov-productlist productlist-slider col-xl-9 col-lg-9 col-md-9 col-xs-12 col-md-12 col-lg-12">
-                        <div class="block block-product clearfix">
+                        class="col-xl-9 col-lg-9 col-md-9 col-xs-12 col-md-12 col-lg-12">
+                        <div class="clearfix">
                             <h2 class="title_block">
                                 Product
                             </h2>
-                            <div id="product-list" class="block_content">
-                                <div
-                                    class="product_list grid owl-carousel owl-theme multi-row"
-                                    data-autoplay="false" data-autoplayTimeout="6000" data-loop="false"
-                                    data-margin="0" data-dots="false" data-nav="true" data-items="6"
->
+                            <div id="product-list">
+                                <div class="row">
                                     @foreach($products as $product)
-                                        <div class="item text-center">
+                                        <div class="item text-center col-4 col-sm-6 col-xs-12">
                                             <div class="product-miniature js-product-miniature item-one first_item"
-                                                 data-id-product="1" data-id-product-attribute="40" itemscope
+                                                 data-id-product="{{$product->id}}" data-id-product-attribute="40"
+                                                 itemscope
                                                  itemtype="https://schema.org/Product">
                                                 <div class="thumbnail-container">
                                                     <a href="" class="thumbnail product-thumbnail two-image">
@@ -163,17 +155,6 @@
 
                                                         <div class="category-title">
                                                             <a href="#">{{$product->name}}</a>
-                                                        </div>
-
-                                                        <div class="product-comments">
-                                                            <div class="star_content">
-                                                                <div class="star star_on"></div>
-                                                                <div class="star star_on"></div>
-                                                                <div class="star star_on"></div>
-                                                                <div class="star star_on"></div>
-                                                                <div class="star star_on"></div>
-                                                            </div>
-                                                            <span>5 review</span>
                                                         </div>
 
                                                         <div class="product-title" itemprop="name">
@@ -215,7 +196,7 @@
     </div>
 
     <div class="container">
-    <center><h1>our pranches</h1></center>
+        <center><h1>our pranches</h1></center>
         <div id="map" style="height:500px">
 
         </div>
@@ -227,7 +208,7 @@
         let products = document.getElementById('product-list');
         let productSubtotal = document.getElementById('product-subtotal');
         let productTotal = document.getElementById('product-total');
-        let shoppingCartCount = document.getElementById('shopping-cart-count');
+        let shoppingCartCount = document.querySelector('.cart-products-count');
         let shoppingCartContent = document.getElementById("shopping-cart-content")
         products.addEventListener("submit", async function (event) {
             event.preventDefault();
@@ -238,8 +219,8 @@
             productSubtotal.dataset.productSubtotal = currentSubtotal.toString();
             productSubtotal.innerText = `( ${currentSubtotal}EGP )`
             productTotal.innerText = `( ${currentSubtotal}EGP )`
-
-            shoppingCartCount.innerText = count.toString();
+            $(".cart-products-count").text(count.toString());
+            // shoppingCartCount.innerText = count.toString();
 
             const productsList = `<li data-product-id=${product.productId}>
             <div class="media">
@@ -309,23 +290,6 @@
                 });
             });
         })
-
-        $('#checkout-btn').on('click', function (e) {
-            e.preventDefault();
-            console.log(e.target);
-            $.ajax({
-                type: "POST",
-                url: '/checkout',
-                data: {product: event.target.dataset, _token: '{{csrf_token()}}'},
-                success: function (data) {
-                    console.log(data);
-                },
-                error: function (data, textStatus, errorThrown) {
-                    console.log(data);
-
-                },
-            });
-        });
         $('.remove-from-cart').on('click', function (e) {
             e.preventDefault();
             console.log(e.target);
@@ -354,45 +318,72 @@
 
     </script>
 
-<script async defer src="{{asset('/js/maps.js')}}"></script>
+    <script type="text/javascript" src="https://atfawry.fawrystaging.com/atfawry/plugin/assets/payments/js/fawrypay-payments.js"></script>
+    <script>
 
-
-
-<script >
-    // Initialize and add the map
-function initMap() {
-  // The location of Uluru
-
-  var myLatLng = new google.maps.LatLng(30,31);
-  // The map, centered at Uluru
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: myLatLng,
-  });
-
-  function createMarker(latlng){
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                icon: {
-                    url: "/kk.png", // url
-                    scaledSize: new google.maps.Size(40, 40), // scaled size
-                    origin: new google.maps.Point(0,0), // origin
-                    anchor: new google.maps.Point(0, 0) // anchor
-                },
-                title:"szone  machine"
+        $("#checkout-btn").on('click', function (event) {
+            event.target.disabled;
+            $.ajax({
+                type: 'POST',
+                url: "/orders",
+                data: {product: event.target.dataset, _token: '{{csrf_token()}}'},
+                success: function (data) {
+                    console.log(data);
+                    if (!data.status) {
+                        window.location.replace('/login');
+                    }
+                    const configuration = {
+                        locale: "en",  //default en
+                        mode: DISPLAY_MODE.SEPARATED,  //required, allowed values [POPUP, INSIDE_PAGE, SIDE_PAGE]
+                    };
+                    FawryPay.checkout(data.charge, configuration);
+                }
             });
-         }
-     $.ajax({
-        type:  "GET",
-        url: '/machines',
-        data: {_token:  "{{csrf_token()}}"},
-        success: function(data) {
-          data.forEach(machine=>createMarker({lat:+machine.latitude, lng: +machine.longitude}))
+        });
+
+
+    </script>
+
+    <script async defer src="{{asset('/js/maps.js')}}"></script>
+
+
+
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of Uluru
+
+            var myLatLng = new google.maps.LatLng(30, 31);
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: myLatLng,
+            });
+
+            function createMarker(latlng) {
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    icon: {
+                        url: "/kk.png", // url
+                        scaledSize: new google.maps.Size(40, 40), // scaled size
+                        origin: new google.maps.Point(0, 0), // origin
+                        anchor: new google.maps.Point(0, 0) // anchor
+                    },
+                    title: "szone  machine"
+                });
+            }
+
+            $.ajax({
+                type: "GET",
+                url: '/machines',
+                data: {_token: "{{csrf_token()}}"},
+                success: function (data) {
+                    data.forEach(machine => createMarker({lat: +machine.latitude, lng: +machine.longitude}))
+                }
+            });
         }
-    });
-}
 
 
-</script>
+    </script>
 @endsection

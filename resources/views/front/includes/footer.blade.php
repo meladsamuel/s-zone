@@ -5,7 +5,7 @@
                 <div class="nov-row footer-top "  data-nov-full-width="true"><div class="nov-row-wrap row"><div class="nov-modules col-lg-12 col-md-12 "><div class="block nov-wrap"><div class="title_block">SIGN UP TO S_ZONE</div>
                                 <!-- begin module:ps_emailsubscription/views/templates/hook/ps_emailsubscription.tpl -->
                                 <!-- begin /var/www/demo.bestprestashoptheme.com/public_html/savemart/themes/vinova_savemart/modules/ps_emailsubscription/views/templates/hook/ps_emailsubscription.tpl --><div class="block_newsletter">
-                     <form action="http://demo.bestprestashoptheme.com/savemart/ar/#footer" method="post">
+                     <form action="" method="post">
 
 
                                         <div class="input-group">

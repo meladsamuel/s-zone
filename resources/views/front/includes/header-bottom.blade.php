@@ -1,8 +1,8 @@
-
 <div class="header-bottom hidden-sm-down">
     <div class="container">
         <div class="row d-flex align-items-center">
-            <div class="contentsticky_verticalmenu verticalmenu-main col-lg-3 col-md-1 d-flex" data-textshowmore="Show More" data-textless="Hide" data-desktop_item="4">
+            <div class="contentsticky_verticalmenu verticalmenu-main col-lg-3 col-md-1 d-flex"
+                 data-textshowmore="Show More" data-textless="Hide" data-desktop_item="4">
                 <div class="toggle-nav d-flex align-items-center justify-content-start">
                     <span class="btnov-lines"></span>
                     <span>Shop By Categories</span>
@@ -150,18 +150,34 @@
                                                             </div>
                                                         </div></div></li></ul></div></li> -->
 
-<!--
-                                    <li class="item " ><a href="#" title="Gaming Gear"><i class="hasicon nov-icon" style="background:url('http://demo.bestprestashoptheme.com/savemart/themes/vinova_savemart/assets/img/modules/novverticalmenu/icon/game.png') no-repeat scroll center center;"></i>Gaming Gear</a><span class="menu-sub-title">Mouse, Headphone, Console ...</span></li>
-                                    <li class="item " ><a href="#" title="Smart Watches "><i class="hasicon nov-icon" style="background:url('http://demo.bestprestashoptheme.com/savemart/themes/vinova_savemart/assets/img/modules/novverticalmenu/icon/smart-watch.png') no-repeat scroll center center;"></i>Smart Watches </a><span class="menu-sub-title">Lorem ipsum dolor sit amet quam</span></li>
-                                    <li class="item " ><a href="#" title="Camera"><i class="hasicon nov-icon" style="background:url('http://demo.bestprestashoptheme.com/savemart/themes/vinova_savemart/assets/img/modules/novverticalmenu/icon/camera.png') no-repeat scroll center center;"></i>Camera</a><span class="menu-sub-title">Lorem ipsum dolor sit amet quam</span></li> -->
-                                    <li class="item " ><a href="#" title="headche"><img src="{{asset('/dd.png')}}" style="width:50px;height:40px">heart</a><span class="menu-sub-title"></span></li>
-                                    <li class="item " ><a href="#" title="pressure"><img src="{{asset('/dd.png')}}" style="width:50px;height:40px">pressure</a><span class="menu-sub-title"></span></li>
-                                    <li class="item " ><a href="#" title="heart"><img src="{{asset('/dd.png')}}" style="width:50px;height:40px">headache</a><span class="menu-sub-title"></span></li>
-                                    <li class="item " ><a href="#" title="heart"><img src="{{asset('/dd.png')}}" style="width:50px;height:40px">sugar</a><span class="menu-sub-title"></span></li>
-                                    <li class="item " ><a href="#" title="heart"><img src="{{asset('/dd.png')}}" style="width:50px;height:40px">stomack</a><span class="menu-sub-title"></span></li>
-                                    <li class="item " ><a href="#" title="heart"><img src="{{asset('/dd.png')}}" style="width:50px;height:40px">high temperture</a><span class="menu-sub-title"></span></li>
-                                    <li class="item " ><a href="#" title="heart"><img src="{{asset('/dd.png')}}" style="width:50px;height:40px">dermatophytes</a><span class="menu-sub-title"></span></li>
-                                    <li class="item " ><a href="#" title="heart"><img src="{{asset('/dd.png')}}" style="width:50px;height:40px">cough</a><span class="menu-sub-title"></span></li>
+                                    <!--
+                                                                        <li class="item " ><a href="#" title="Gaming Gear"><i class="hasicon nov-icon" style="background:url('http://demo.bestprestashoptheme.com/savemart/themes/vinova_savemart/assets/img/modules/novverticalmenu/icon/game.png') no-repeat scroll center center;"></i>Gaming Gear</a><span class="menu-sub-title">Mouse, Headphone, Console ...</span></li>
+                                                                        <li class="item " ><a href="#" title="Smart Watches "><i class="hasicon nov-icon" style="background:url('http://demo.bestprestashoptheme.com/savemart/themes/vinova_savemart/assets/img/modules/novverticalmenu/icon/smart-watch.png') no-repeat scroll center center;"></i>Smart Watches </a><span class="menu-sub-title">Lorem ipsum dolor sit amet quam</span></li>
+                                                                        <li class="item " ><a href="#" title="Camera"><i class="hasicon nov-icon" style="background:url('http://demo.bestprestashoptheme.com/savemart/themes/vinova_savemart/assets/img/modules/novverticalmenu/icon/camera.png') no-repeat scroll center center;"></i>Camera</a><span class="menu-sub-title">Lorem ipsum dolor sit amet quam</span></li> -->
+                                    <li class="item "><a href="#" title="headche"><img src="{{asset('/dd.png')}}"
+                                                                                       style="width:50px;height:40px">heart</a><span
+                                            class="menu-sub-title"></span></li>
+                                    <li class="item "><a href="#" title="pressure"><img src="{{asset('/dd.png')}}"
+                                                                                        style="width:50px;height:40px">pressure</a><span
+                                            class="menu-sub-title"></span></li>
+                                    <li class="item "><a href="#" title="heart"><img src="{{asset('/dd.png')}}"
+                                                                                     style="width:50px;height:40px">headache</a><span
+                                            class="menu-sub-title"></span></li>
+                                    <li class="item "><a href="#" title="heart"><img src="{{asset('/dd.png')}}"
+                                                                                     style="width:50px;height:40px">sugar</a><span
+                                            class="menu-sub-title"></span></li>
+                                    <li class="item "><a href="#" title="heart"><img src="{{asset('/dd.png')}}"
+                                                                                     style="width:50px;height:40px">stomack</a><span
+                                            class="menu-sub-title"></span></li>
+                                    <li class="item "><a href="#" title="heart"><img src="{{asset('/dd.png')}}"
+                                                                                     style="width:50px;height:40px">high
+                                            temperture</a><span class="menu-sub-title"></span></li>
+                                    <li class="item "><a href="#" title="heart"><img src="{{asset('/dd.png')}}"
+                                                                                     style="width:50px;height:40px">dermatophytes</a><span
+                                            class="menu-sub-title"></span></li>
+                                    <li class="item "><a href="#" title="heart"><img src="{{asset('/dd.png')}}"
+                                                                                     style="width:50px;height:40px">cough</a><span
+                                            class="menu-sub-title"></span></li>
 
                                 </ul>
                             </div>
@@ -181,21 +197,52 @@
                         <nav id="nov-megamenu" class="clearfix">
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div id="megamenu" class="nov-megamenu clearfix">
-                                <ul class="menu level1"><li class="item home-page has-sub" ><span class="opener"></span><a href="?home" title="Home"><i class="zmdi zmdi-home"></i>Home</a><div class="dropdown-menu" style="width:200px"><ul class=""><li class="item " ><a href="?home=home_1" title="Homepage 1">Homepage 1</a></li>
+                                <ul class="menu level1">
+                                    <li class="item home-page has-sub"><span class="opener"></span><a href="?home"
+                                                                                                      title="Home"><i
+                                                class="zmdi zmdi-home"></i>Home</a>
+                                        <div class="dropdown-menu" style="width:200px">
+                                            <ul class="">
+                                                <li class="item "><a href="?home=home_1" title="Homepage 1">Homepage
+                                                        1</a></li>
 
-                                            </ul></div></li>
-                                    <li class="item  has-sub" ><span class="opener"></span><a href="#" title="Blog"><i class="zmdi zmdi-library"></i>Blog</a><div class="dropdown-menu" style="width:270px"><ul class=""><li class="item " ><a href="/savemart/en/index.php?fc=module&amp;module=smartblog&amp;id_post=14&amp;controller=details" title="Blog detail">Blog detail</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="item  has-sub"><span class="opener"></span><a href="#" title="Blog"><i
+                                                class="zmdi zmdi-library"></i>Blog</a>
+                                        <div class="dropdown-menu" style="width:270px">
+                                            <ul class="">
+                                                <li class="item "><a
+                                                        href="/savemart/en/index.php?fc=module&amp;module=smartblog&amp;id_post=14&amp;controller=details"
+                                                        title="Blog detail">Blog detail</a></li>
 
-                                            </ul></div></li>
+                                            </ul>
+                                        </div>
+                                    </li>
 
-                                <li class="item  has-sub" ><span class="opener"></span><a href="#" title="Blog"><i class="zmdi zmdi-library"></i>pages</a><div class="dropdown-menu" style="width:270px"><ul class=""><li class="item " ><a href="/savemart/en/index.php?fc=module&amp;module=smartblog&amp;id_post=14&amp;controller=details" title="Blog detail">contact</a></li>
-                                    <li class="item " ><a href="/savemart/en/index.php?fc=module&amp;module=smartblog&amp;id_post=14&amp;controller=details" title="Blog detail">blog</a></li>
+                                    <li class="item  has-sub"><span class="opener"></span><a href="#" title="Blog"><i
+                                                class="zmdi zmdi-library"></i>pages</a>
+                                        <div class="dropdown-menu" style="width:270px">
+                                            <ul class="">
+                                                <li class="item "><a
+                                                        href="/savemart/en/index.php?fc=module&amp;module=smartblog&amp;id_post=14&amp;controller=details"
+                                                        title="Blog detail">contact</a></li>
+                                                <li class="item "><a
+                                                        href="/savemart/en/index.php?fc=module&amp;module=smartblog&amp;id_post=14&amp;controller=details"
+                                                        title="Blog detail">blog</a></li>
 
-                                    <li class="item " ><a href="/savemart/en/index.php?fc=module&amp;module=smartblog&amp;id_post=14&amp;controller=details" title="Blog detail">about the team</a></li>
+                                                <li class="item "><a
+                                                        href="/savemart/en/index.php?fc=module&amp;module=smartblog&amp;id_post=14&amp;controller=details"
+                                                        title="Blog detail">about the team</a></li>
 
-                                       <li class="item " ><a href="/savemart/en/index.php?fc=module&amp;module=smartblog&amp;id_post=14&amp;controller=details" title="Blog detail">category</a></li>
+                                                <li class="item "><a
+                                                        href="/savemart/en/index.php?fc=module&amp;module=smartblog&amp;id_post=14&amp;controller=details"
+                                                        title="Blog detail">category</a></li>
 
-                                            </ul></div></li>
+                                            </ul>
+                                        </div>
+                                    </li>
 
                         </nav>
                         <!-- end modules/novmegamenu/views/templates/hook/novmegamenu.tpl -->
@@ -221,151 +268,22 @@
                                     <input type="hidden" name="fc" value="module">
                                     <input type="hidden" name="module" value="novadvancedsearch">
                                     <input type="hidden" name="controller" value="result">
-                                    <input type="hidden" name="orderby" value="position" />
-                                    <input type="hidden" name="orderway" value="desc" />
-                                    <input type="hidden" name="id_category" class="id_category" value="0" />
+                                    <input type="hidden" name="orderby" value="position"/>
+                                    <input type="hidden" name="orderway" value="desc"/>
+                                    <input type="hidden" name="id_category" class="id_category" value="0"/>
                                     <div class="input-group">
-                                        <input type="text" id="search_query_top" class="search_query ui-autocomplete-input form-control" name="query" value="" placeholder="Search"/>
-
-                                       <!--  <div class="input-group-btn nov_category_tree hidden-sm-down">
-                                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" value="" aria-expanded="false">
-                                                CATEGORIES
-                                            </button>
-                                            <ul class="dropdown-menu list-unstyled">
-                                                <li class="dropdown-item active" data-value="0"><span>All Categories</span></li>
-                                                <li class="dropdown-item " data-value="2"><span>الصفحة الرئيسية</span></li>
-                                                <ul class="list-unstyled pl-5">
-                                                    <li class="dropdown-item" data-value="3" >
-                                                        <span>Computer &amp; Networking</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="10" >
-                                                        <span>-- USB</span>
-                                                        <ul class="list-unstyled">
-                                                            <li class="dropdown-item" data-value="11" >
-                                                                <span>---- USB Kingston</span>
-                                                            </li>
-                                                            <li class="dropdown-item" data-value="12" >
-                                                                <span>---- USB Sandisk</span>
-                                                            </li>
-                                                            <li class="dropdown-item" data-value="13" >
-                                                                <span>---- USB Samsung</span>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="14" >
-                                                        <span>-- Hard Disk</span>
-                                                        <ul class="list-unstyled">
-                                                            <li class="dropdown-item" data-value="19" >
-                                                                <span>---- Hard Disk Drive</span>
-                                                            </li>
-                                                            <li class="dropdown-item" data-value="20" >
-                                                                <span>---- Solid State Drives</span>
-                                                            </li>
-                                                            <li class="dropdown-item" data-value="21" >
-                                                                <span>---- SATA</span>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="15" >
-                                                        <span>-- Modem WIFI</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="16" >
-                                                        <span>-- Keyboard</span>
-                                                        <ul class="list-unstyled">
-                                                            <li class="dropdown-item" data-value="22" >
-                                                                <span>---- Keyboard 1</span>
-                                                            </li>
-                                                            <li class="dropdown-item" data-value="23" >
-                                                                <span>---- Keyboard 2</span>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="17" >
-                                                        <span>-- Mouse</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="18" >
-                                                        <span>-- Monitor</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="6" >
-                                                        <span>Laptop &amp; Accessories</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="7" >
-                                                        <span>-- Laptop 1</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="8" >
-                                                        <span>-- Laptop 2</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="9" >
-                                                        <span>Smartphone &amp; Tablet</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="24" >
-                                                        <span>-- Apple</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="25" >
-                                                        <span>-- Samsung</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="26" >
-                                                        <span>-- Motorola</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="27" >
-                                                        <span>-- Chargers</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="4" >
-                                                        <span>Home Appliance</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="5" >
-                                                        <span>Camera &amp; Photo</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="28" >
-                                                        <span>-- Camera 1</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="29" >
-                                                        <span>-- Camera 2</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="30" >
-                                                        <span>-- Photo 1</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="31" >
-                                                        <span>-- Photo 2</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="32" >
-                                                        <span>Audio</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="33" >
-                                                        <span>-- Headphone</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="34" >
-                                                        <span>-- Wireless Speaker</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="35" >
-                                                        <span>-- Bluetooth Speaker</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="36" >
-                                                        <span>-- Mini Speaker</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="37" >
-                                                        <span>-- Sound Card</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="38" >
-                                                        <span>-- إكسسوارات</span>
-                                                    </li>
-                                                    <li class="dropdown-item" data-value="39" >
-                                                        <span>-- Earbuds and  In-ear</span>
-                                                    </li>
-                                                </ul>
-                                            </ul>
-                                        </div> -->
-
+                                        <input type="text" id="search_query_top"
+                                               class="search_query ui-autocomplete-input form-control" name="query"
+                                               value="" placeholder="Search"/>
                                         <span class="input-group-btn">
-				 <button class="btn btn-secondary" type="submit" name="submit_search"><i class="material-icons">search</i></button>
+				 <button class="btn btn-secondary" type="submit" name="submit_search"><i
+                         class="material-icons">search</i></button>
 			</span>
                                     </div>
 
                                 </form>
                             </div>
-                            <!-- /Block search module TOP -->
 
-                            <!-- end modules/novadvancedsearch/novadvancedsearch-top.tpl -->
 
                         </div>
                     </div>
