@@ -51,9 +51,9 @@
                     <!-- begin module:ps_languageselector/ps_languageselector.tpl -->
                     <!-- begin /var/www/demo.bestprestashoptheme.com/public_html/savemart/themes/vinova_savemart/modules/ps_languageselector/ps_languageselector.tpl --><div id="_desktop_language_selector" class="language-selector groups-selector hidden-sm-down language-selector-dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="main">
-                            <span class="expand-more"><img class="img-fluid" src="/savemart/img/l/6.jpg" alt="اللغة العربية" width="16" height="11"/></span>
+                            <span class="expand-more"><img class="img-fluid" src="{{asset('/szone.jpeg')}}" alt="s zone" width="90" height="130"/></span>
                         </div>
-                        <div class="language-list dropdown-menu">
+                       <!--  <div class="language-list dropdown-menu">
                             <div class="language-list-content text-left">
                                 <div class="language-item">
                                     <div  >
@@ -105,7 +105,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- end /var/www/demo.bestprestashoptheme.com/public_html/savemart/themes/vinova_savemart/modules/ps_languageselector/ps_languageselector.tpl -->
                     <!-- end module:ps_languageselector/ps_languageselector.tpl -->
 

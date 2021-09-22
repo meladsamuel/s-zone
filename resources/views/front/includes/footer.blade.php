@@ -2,10 +2,10 @@
     <div class="inner-footer">
         <div class="container">
             <div class="row">
-                <div class="nov-row footer-top "  data-nov-full-width="true"><div class="nov-row-wrap row"><div class="nov-modules col-lg-12 col-md-12 "><div class="block nov-wrap"><div class="title_block">SIGN UP TO NEWSLETTER</div>
+                <div class="nov-row footer-top "  data-nov-full-width="true"><div class="nov-row-wrap row"><div class="nov-modules col-lg-12 col-md-12 "><div class="block nov-wrap"><div class="title_block">SIGN UP TO S_ZONE</div>
                                 <!-- begin module:ps_emailsubscription/views/templates/hook/ps_emailsubscription.tpl -->
                                 <!-- begin /var/www/demo.bestprestashoptheme.com/public_html/savemart/themes/vinova_savemart/modules/ps_emailsubscription/views/templates/hook/ps_emailsubscription.tpl --><div class="block_newsletter">
-                                    <form action="http://demo.bestprestashoptheme.com/savemart/ar/#footer" method="post">
+                     <form action="http://demo.bestprestashoptheme.com/savemart/ar/#footer" method="post">
 
 
                                         <div class="input-group">
@@ -42,7 +42,7 @@
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="zmdi zmdi-close"></i></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="http://demo.bestprestashoptheme.com/savemart/ar/" method="post">
+                                <form action="http://demo.bestprestashoptheme.com/savemart/ar/" method="post">
                                                     <div class="subscribe_form d-flex justify-content-start ">
                                                         <div class="inner">
                                                             <div class="title_block">Sign up to Newsletter</div>
@@ -75,7 +75,7 @@
                         <div class="nov-html col-xl-4 col-lg-4 col-md-4">
                             <div class="block">
                                 <div class="block_content">
-                                    <p class="logo-footer"><img src="http://images.vinovathemes.com/prestashop_savemart/logo-footer.png" alt="logo" width="167" height="23" /></p>
+                                    <p class="logo-footer"><img src="{{asset('/szone.jpeg')}}" alt="logo" width="167" height="123" /></p>
                                     <div class="data-contact d-flex align-self-stretch">
                                         <div class="title-icon">support<i class="icon-support icon-address"></i></div>
                                         <div class="content-data-contact">
@@ -170,9 +170,9 @@
             Copyright © 2018 Vinovathemes. All Rights Reserved
           </span>
                 </div>
-                <div class="payment-image col-md-6 align-items-center justify-content-md-end justify-content-sm-center d-flex flex-center">
+                <!-- <div class="payment-image col-md-6 align-items-center justify-content-md-end justify-content-sm-center d-flex flex-center">
                     <img class="img-fluid" src="/savemart/modules/novthemeconfig/images/payment-logo-1.png" alt="payment" title="Payment" />
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

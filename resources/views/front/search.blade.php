@@ -44,24 +44,19 @@
                                     </div>
                                 </div>
                                 <div class="nivoSlider">
-                                   <!--  <a href="#">
+                                    <a href="#">
                                         <img
                                             src="http://demo.bestprestashoptheme.com/savemart/modules/novnivoslider/images/266cf50ba4d1d91fa5f5ded20bb66ea38de3b350_1.jpg"
                                             alt="" title="#htmlcaption_42"/>
-                                    </a> -->
+                                    </a>
                                     <a href="#">
                                         <img
-                                            src="{{ asset('/9000.jpg') }}"
+                                            src="http://demo.bestprestashoptheme.com/savemart/modules/novnivoslider/images/62896aebffd6fdce749d957fc76bd83d734fa338_2.jpg"
                                             alt="" title="#htmlcaption_43"/>
                                     </a>
                                     <a href="#">
                                         <img
-                                            src="{{ asset('/7.jpg') }}"
-                                            alt="" title="#htmlcaption_57"/>
-                                    </a>
-                                    <a href="#">
-                                        <img
-                                            src="{{ asset('/szone.jpeg') }}"
+                                            src="http://demo.bestprestashoptheme.com/savemart/modules/novnivoslider/images/195d62088850e3489886855b4239edcc4fb1868f_3.jpg"
                                             alt="" title="#htmlcaption_57"/>
                                     </a>
                                 </div>
@@ -131,27 +126,27 @@
                                 <div
                                     class="product_list grid owl-carousel owl-theme multi-row"
                                     data-autoplay="false" data-autoplayTimeout="6000" data-loop="false"
-                                    data-margin="0" data-dots="false" data-nav="true" data-items="6"
->
-                                    @foreach($products as $product)
+                                    data-margin="0" data-dots="false" data-nav="true" data-items="3"
+                                    data-items_large="3" data-items_tablet="3" data-items_mobile="2">
+                                    @foreach($product as $products)
                                         <div class="item text-center">
                                             <div class="product-miniature js-product-miniature item-one first_item"
                                                  data-id-product="1" data-id-product-attribute="40" itemscope
                                                  itemtype="https://schema.org/Product">
                                                 <div class="thumbnail-container">
-                                                    <a href="" class="thumbnail product-thumbnail two-image">
+                                                    <a href="productdetails/{{$products->id}}" class="thumbnail product-thumbnail two-image">
                                                         <img
                                                             class="img-fluid image-cover"
-                                                            src="{{$product->img}}"
-                                                            alt="{{$product->name}}"
+                                                            src="{{$products->img}}"
+                                                            alt="{{$products->name}}"
                                                             data-full-size-image-url=""
                                                             width="600"
                                                             height="600"
                                                         >
                                                         <img
                                                             class="img-fluid image-secondary"
-                                                            src="{{$product->img}}"
-                                                            alt="{{$product->name}}"
+                                                            src="{{$products->img}}"
+                                                            alt="{{$products->name}}"
                                                             data-full-size-image-url=""
                                                             width="600"
                                                             height="600"
@@ -162,7 +157,7 @@
                                                     <div class="product-groups">
 
                                                         <div class="category-title">
-                                                            <a href="#">{{$product->name}}</a>
+                                                            <a href="#">{{$products->name}}</a>
                                                         </div>
 
                                                         <div class="product-comments">
@@ -177,22 +172,22 @@
                                                         </div>
 
                                                         <div class="product-title" itemprop="name">
-                                                            <a href="">{{$product->name}}</a>
+                                                            <a href="">{{$products->name}}</a>
                                                         </div>
 
                                                         <div class="product-group-price">
                                                             <div class="product-price-and-shipping">
-                                                                <span itemprop="price" class="price">{{$product->price}} EGP</span>
+                                                                <span itemprop="price" class="price">{{$products->price}} EGP</span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="product-buttons d-flex justify-content-center"
                                                          itemprop="offers" itemscope
                                                          itemtype="https://schema.org/Offer">
-                                                        <form data-product-id="{{$product->id}}"
-                                                              data-product-price="{{$product->price}}"
-                                                              data-product-name="{{$product->name}}"
-                                                              data-product-img="{{$product->img}}"
+                                                        <form data-product-id="{{$products->id}}"
+                                                              data-product-price="{{$products->price}}"
+                                                              data-product-name="{{$products->name}}"
+                                                              data-product-img="{{$products->img}}"
                                                               class="formAddToCart">
                                                             <button style="border: none" class="add-to-cart"
                                                                     type="submit">
@@ -213,186 +208,5 @@
             </div>
         </section>
     </div>
-
-    <div class="container">
-    <center><h1>our pranches</h1></center>
-        <div id="map" style="height:500px">
-
-        </div>
-    </div>
-    <br><br>
 @endsection
-@section('script')
-    <script>
-        let products = document.getElementById('product-list');
-        let productSubtotal = document.getElementById('product-subtotal');
-        let productTotal = document.getElementById('product-total');
-        let shoppingCartCount = document.getElementById('shopping-cart-count');
-        let shoppingCartContent = document.getElementById("shopping-cart-content")
-        products.addEventListener("submit", async function (event) {
-            event.preventDefault();
-            let isNew = true;
-            const product = event.target.dataset;
-            const count = +shoppingCartCount.innerText + 1;
-            const currentSubtotal = +productSubtotal.dataset.productSubtotal + Number(product.productPrice);
-            productSubtotal.dataset.productSubtotal = currentSubtotal.toString();
-            productSubtotal.innerText = `( ${currentSubtotal}EGP )`
-            productTotal.innerText = `( ${currentSubtotal}EGP )`
 
-            shoppingCartCount.innerText = count.toString();
-
-            const productsList = `<li data-product-id=${product.productId}>
-            <div class="media">
-               <img class="d-flex product-image"
-                    src="${product.productImg}"
-                    alt="${product.productName}">
-               <div class="media-body">
-                    <div class="product-name">${product.productName}</div>
-                    <div class="group-price">
-                        <span class="product-price">${product.productPrice}EGP</span>
-                        <span class="quantity" data-product-quantity="1">x1</span>
-                    </div>
-                    <a class="remove-from-cart" rel="nofollow" data-product-id="${product.productId}"
-                       href="javascript: void(0)"
-                       data-link-action="remove-from-cart" title="remove from cart">
-                        <i class="fa fa-trash-o" data-product-id="${product.productId}" aria-hidden="true"></i>
-                    </a>
-                </div>
-            <div> </li>`;
-            for (const item of shoppingCartContent.children) {
-                if (item.dataset.productId === product.productId) {
-                    const duplicatedProduct = item.querySelector('.quantity');
-                    duplicatedProduct.dataset.productQuantity = +duplicatedProduct.dataset.productQuantity + 1;
-                    duplicatedProduct.innerText = `x${duplicatedProduct.dataset.productQuantity}`;
-                    isNew = false;
-                }
-            }
-            if (isNew) {
-                shoppingCartContent.innerHTML += productsList;
-            }
-
-
-            $.ajax({
-                type: "POST",
-                url: '/add-to-cart',
-                data: {product: event.target.dataset, _token: '{{csrf_token()}}'},
-                success: function (data) {
-                    console.log(data);
-                },
-                error: function (data, textStatus, errorThrown) {
-                    console.log(data);
-
-                },
-            });
-            $('.remove-from-cart').on('click', function (e) {
-                e.preventDefault();
-                console.log(e.target);
-                document.querySelector(`li[data-product-id="${e.target.dataset.productId}"]`).remove();
-
-                $.ajax({
-                    type: "DELETE",
-                    url: `/shopping-cart/products/${e.target.dataset.productId}`,
-                    data: {product: event.target.dataset, _token: '{{csrf_token()}}'},
-                    success: function (data) {
-                        console.log(data);
-                        productSubtotal.innerText = `( ${data.price}EGP )`;
-                        productSubtotal.dataset.productSubtotal = data.price.toString();
-                        productTotal.innerText = `( ${data.price}EGP )`;
-                        productTotal.dataset.productSubtotal = data.price.toString();
-                        shoppingCartCount.innerText = data.count.toString();
-
-                    },
-                    error: function (data, textStatus, errorThrown) {
-                        console.log(data);
-
-                    },
-                });
-            });
-        })
-
-        $('#checkout-btn').on('click', function (e) {
-            e.preventDefault();
-            console.log(e.target);
-            $.ajax({
-                type: "POST",
-                url: '/checkout',
-                data: {product: event.target.dataset, _token: '{{csrf_token()}}'},
-                success: function (data) {
-                    console.log(data);
-                },
-                error: function (data, textStatus, errorThrown) {
-                    console.log(data);
-
-                },
-            });
-        });
-        $('.remove-from-cart').on('click', function (e) {
-            e.preventDefault();
-            console.log(e.target);
-            document.querySelector(`li[data-product-id="${e.target.dataset.productId}"]`).remove();
-
-            $.ajax({
-                type: "DELETE",
-                url: `/shopping-cart/products/${e.target.dataset.productId}`,
-                data: {product: event.target.dataset, _token: '{{csrf_token()}}'},
-                success: function (data) {
-                    console.log(data);
-                    productSubtotal.innerText = `( ${data.price}EGP )`;
-                    productSubtotal.dataset.productSubtotal = data.price.toString();
-                    productTotal.innerText = `( ${data.price}EGP )`;
-                    productTotal.dataset.productSubtotal = data.price.toString();
-                    shoppingCartCount.innerText = data.count.toString();
-
-                },
-                error: function (data, textStatus, errorThrown) {
-                    console.log(data);
-
-                },
-            });
-        });
-
-
-    </script>
-
-<script async defer src="{{asset('/js/maps.js')}}"></script>
-
-
-
-<script >
-    // Initialize and add the map
-function initMap() {
-  // The location of Uluru
-
-  var myLatLng = new google.maps.LatLng(30,31);
-  // The map, centered at Uluru
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: myLatLng,
-  });
-
-  function createMarker(latlng){
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                icon: {
-                    url: "/kk.png", // url
-                    scaledSize: new google.maps.Size(40, 40), // scaled size
-                    origin: new google.maps.Point(0,0), // origin
-                    anchor: new google.maps.Point(0, 0) // anchor
-                },
-                title:"szone  machine"
-            });
-         }
-     $.ajax({
-        type:  "GET",
-        url: '/machines',
-        data: {_token:  "{{csrf_token()}}"},
-        success: function(data) {
-          data.forEach(machine=>createMarker({lat:+machine.latitude, lng: +machine.longitude}))
-        }
-    });
-}
-
-
-</script>
-@endsection

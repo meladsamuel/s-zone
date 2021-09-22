@@ -4,9 +4,10 @@
             <div id="_desktop_logo"
                  class="contentsticky_logo d-flex align-items-center justify-content-start col-lg-3 col-md-3">
                 <a href="http://demo.bestprestashoptheme.com/savemart/">
-                    <img class="logo img-fluid" src="/savemart/modules/novthemeconfig/images/logos/logo-1.png"
-                         alt="Prestashop_Savemart">
+                    <img class="logo img-fluid" src="{{asset('/szone.jpeg')}}"
+                         alt="S zone">
                 </a>
+
             </div>
             <div class="col-lg-9 col-md-9 header-menu d-flex align-items-center justify-content-end">
                 <div class="data-contact d-flex align-items-center">
