@@ -55,7 +55,7 @@ class ProductsController extends Controller
             "description"=>$request->description,
             "price"=>$request->price,
             "exp_date"=>$request->exp_date,
-            "cat_id"=>$request->cat_id,
+//            "cat_id"=>$request->cat_id,
         ]);
 //        return redirect()->route('admin.products.index')->with(['success' => 'تم الحفظ بنجاح']);
 //       }catch (\Exception $ex) {
