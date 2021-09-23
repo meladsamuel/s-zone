@@ -43,7 +43,7 @@ class ProductsController extends Controller
     {
 
 //        try{
-        //dd($request->all());
+        dd($request->all());
         if($request->hasFile('img')){
             $file = $request->img;
             $new_file = time().$file->getClientOriginalName();
