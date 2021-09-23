@@ -42,7 +42,7 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
 
-        try{
+//        try{
         //dd($request->all());
         if($request->hasFile('img')){
             $file = $request->img;
@@ -57,11 +57,11 @@ class ProductsController extends Controller
             "exp_date"=>$request->exp_date,
             "cat_id"=>$request->cat_id,
         ]);
-        return redirect()->route('admin.products.index')->with(['success' => 'تم الحفظ بنجاح']);
-       }catch (\Exception $ex) {
-        return redirect()->route('admin.products.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);
-       }
-    }
+//        return redirect()->route('admin.products.index')->with(['success' => 'تم الحفظ بنجاح']);
+//       }catch (\Exception $ex) {
+//        return redirect()->route('admin.products.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);
+//       }
+//    }
 
     /**
      * Display the specified resource.
