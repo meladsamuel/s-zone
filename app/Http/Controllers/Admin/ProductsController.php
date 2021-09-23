@@ -59,9 +59,9 @@ class ProductsController extends Controller
         ]);
 //        return redirect()->route('admin.products.index')->with(['success' => 'تم الحفظ بنجاح']);
 //       }catch (\Exception $ex) {
-//        return redirect()->route('admin.products.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);
+        return redirect()->route('admin.products.index')->with(['error' => 'هناك خطاء ما يرجي المحاولة فيما بعد']);
 //       }
-//    }
+    }
 
     /**
      * Display the specified resource.
