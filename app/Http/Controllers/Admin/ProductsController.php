@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -44,14 +45,10 @@ class ProductsController extends Controller
 
         try{
 //        dd($request->all());
-        if($request->hasFile('img')){
-            $file = $request->img;
-            $new_file = time().$file->getClientOriginalName();
-            $file->move('storage/products', $new_file);
-        }
+        $path = $request->file("img")->storePublicly("images", "s3");
         Product::create([
             "name"=>$request->name,
-            "img"=>'storage/products/'. $new_file,
+            "img"=>Storage::disk("s3")->url($path),
             "description"=>$request->description,
             "price"=>$request->price,
             "exp_date"=>$request->exp_date,
