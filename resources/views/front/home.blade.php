@@ -131,7 +131,7 @@
                                                  itemscope
                                                  itemtype="https://schema.org/Product">
                                                 <div class="thumbnail-container">
-                                                    <a href="" class="thumbnail product-thumbnail two-image">
+                                                    <a class="thumbnail product-thumbnail two-image">
                                                         <img
                                                             class="img-fluid image-cover"
                                                             src="{{$product->img}}"
