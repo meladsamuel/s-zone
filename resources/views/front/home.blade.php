@@ -344,9 +344,10 @@
 
     </script>
 
-    <script async defer src="{{asset('/js/maps.js')}}"></script>
 
-
+    <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG-EYwZNQE8p_eUx7yey-JRLhIg-VXWDY&callback=initMap">
+    </script>
 
     <script>
         // Initialize and add the map
