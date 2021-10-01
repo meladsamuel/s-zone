@@ -332,12 +332,12 @@
                     if (!data.status) {
                         window.location.replace('/login');
                     }
-                    // const configuration = {
-                    //     locale: "en",  //default en
-                    //     mode: DISPLAY_MODE.SEPARATED,  //required, allowed values [POPUP, INSIDE_PAGE, SIDE_PAGE]
-                    // };
-                    // FawryPay.checkout(data.charge, configuration);
-                    window.location.replace('/scan?merchantRefNumber='+data.charge.merchantRefNum);
+                    const configuration = {
+                        locale: "en",  //default en
+                        mode: DISPLAY_MODE.SEPARATED,  //required, allowed values [POPUP, INSIDE_PAGE, SIDE_PAGE]
+                    };
+                    FawryPay.checkout(data.charge, configuration);
+                    // window.location.replace('/scan?merchantRefNumber='+data.charge.merchantRefNum);
 
                 }
             });
